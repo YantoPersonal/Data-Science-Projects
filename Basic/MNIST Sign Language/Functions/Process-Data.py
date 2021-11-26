@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 def read_csv(csv_file, flatten = True, verbose = False):
     """
-    This Function takes CSV File as input, and returns numpy N-Dimensional Array.
+    This Function takes CSV File as input, and returns PyTorch Tensors as Output.
     """
     # Read CSV File as DataFrame:
     df = pd.read_csv(csv_file, header=[0])
@@ -33,7 +33,6 @@ def read_csv(csv_file, flatten = True, verbose = False):
         if verbose == True:
             print(f'Shape of Data (Reshaped): {x.shape}\n')
             print('Plotting Sample...')
-            #plt.switch_backend('QtAgg4')
             plt.imshow(x[0][0])
             plt.show(block=False)
             input("press <ENTER> to continue")
